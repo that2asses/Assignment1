@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	// Components
 	private CharacterController controller;
 	private Camera cam;
+	public Gun gun;
 
 
 	// Use this for initialization
@@ -28,6 +29,13 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		ControlMouse ();
 		//ControlWASD ();
+		if (Input.GetButtonDown ("Shoot")) {
+			gun.Shoot();		
+		}
+		else if(Input.GetButton ("Shoot")) {
+			gun.ShootContinuous();		
+		}
+
 	}
 
 	void ControlMouse(){
